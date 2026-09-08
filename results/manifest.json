@@ -1,0 +1,37 @@
+{
+  "version": "3.0.0-review",
+  "seed": 42,
+  "donor_seed": 4242,
+  "control_seed": 987,
+  "n": 10000,
+  "turns": 100,
+  "alpha": 0.02,
+  "pi_grid": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "python": "3.12.13",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "source_sha256": {
+    "src/__init__.py": "d32ad2bf84d77a97878100334384b83f538e448a82ca06f17e7bfe4ccc036357",
+    "src/model.py": "930193609a93fbc55c3050aa623d796538fb290dea8453a27a598ab78934f53c",
+    "src/statistics.py": "a2a417fbe1418cb04c3a128a7c5ba735b0987357c9a17f20d69885ae8f88d13b",
+    "scripts/check_model.py": "4f3189d06d961033acdc778013c88799cd8b2fa2eea625948135ff105ece05ff",
+    "scripts/make_figures.py": "562eab00ef511be841f21ccf95a0b5bb3be5354f8c2b830007951dc2f68eaae4",
+    "scripts/run_all.py": "fc6ba5a5a6f583098ff6b8d162fe172cae0c0fbcfa461925150b26367472a3e8"
+  },
+  "pairing": "six uniforms per turn; same seed within each comparison",
+  "multiple_comparisons": "Holm within main (44), diffusion (88), exact-rule/oracle (44), forms (18), graded (11), mitigations (66), feedback controls (12).",
+  "selection": "All settings and the exact-rule benchmarks are reported; no setting is labelled optimal.",
+  "exact_impartial_probability": 0.00676612689872417
+}

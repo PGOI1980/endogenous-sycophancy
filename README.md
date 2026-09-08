@@ -1,120 +1,54 @@
-# When Sycophancy Becomes Endogenous: Simulation Code
+# When Sycophancy Becomes Endogenous
 
-Companion code for the paper:
+Companion code for *When Sycophancy Becomes Endogenous: A Coupled Feedback Loop Model of Delusional Spiralling*. Version `3.0.0-review` contains the revised simulation, its saved results, and the source for every manuscript figure.
 
-**Gallacher, P. (2026). _When Sycophancy Becomes Endogenous: A Coupled Feedback Loop Model of Delusional Spiralling._**
+The model uses a binary world state, a Bayesian user, and a bot whose sycophantic response propensity can change after agreement with the user's expressed opinion. The revised paper distinguishes that agreement signal from the user's actual posterior movement. It also separates rising exposure to sycophancy from dependence on the current user.
 
-This repository contains the simulation scripts, saved outputs, and figure-generation code used to replicate the baseline model from Chandra et al. (2026) and extend it with an endogenous sycophancy update rule.
+## Reproduce the revised analyses
 
-## Repository layout
-
-```text
-endogenous-sycophancy/
-  README.md
-  LICENSE
-  CITATION.cff
-  requirements.txt
-  src/
-    __init__.py
-    io_utils.py
-    simulation_core.py
-  scripts/
-    01_baseline_replication.py
-    02_coupled_model.py
-    03_informed_user.py
-    04_sensitivity_analysis.py
-    05_adaptive_informed_user.py
-    06_confidence_intervals.py
-    07_generate_figures.py
-    08_generate_revision_figures.py
-    09_mitigations.py
-    10_graded_signal.py
-  results/
-  figures/
-  tests/
-    test_smoke.py
-```
-
-## Environment
-
-- Python 3.10 or newer recommended
-- NumPy
-- SciPy
-- Matplotlib
-- pytest for smoke tests
-
-Install dependencies with:
+Use Python 3.10 or later. Install the dependencies, run the model checks, generate the numerical results, then draw the figures:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
+python scripts/check_model.py
+python scripts/run_all.py
+python scripts/make_figures.py
 ```
 
-## Model parameters
+The model checks use ordinary Python assertions and do not require pytest. They can also be run with `python -m pytest` if pytest is installed. The analyses use 10,000 conversations per condition and 100 rounds per conversation. Execution time depends on the machine, especially for the 101-point inference checks.
 
-These follow the paper and the Chandra et al. baseline:
+## Files and their roles
 
-- `H in {0, 1}`, with true state `H = 1`
-- prior `p(H=0) = p(H=1) = 0.5`
-- `k = 2` data points per round
-- `p(D=1 | H=0) = 0.4`, `p(D=1 | H=1) = 0.6`
-- `T = 100` rounds
-- `N_SIMS = 10_000` simulations per condition
-- catastrophic spiralling threshold: `p(H=0) >= 0.99`
-- baseline coupling strength: `alpha = 0.02`
+| Path | Contents |
+| --- | --- |
+| `src/model.py` | Shared simulation and probability-conserving diffusion |
+| `src/statistics.py` | Wilson intervals, exact paired tests, and Holm adjustment |
+| `scripts/run_all.py` | All revised numerical experiments |
+| `scripts/make_figures.py` | Figures 1-9 and supplementary Figure S1, drawn from saved results |
+| `scripts/check_model.py` | Standalone runner for model identities |
+| `tests/test_model.py` | Probability, boundary, and equivalent-setting checks |
+| `results/` | Counts, intervals, paired comparisons, traces, and event arrays |
+| `figures/` | Publication figures in PNG and SVG formats |
+| `docs/methods.md` | Numerical specification, comparison families, and knowledge assumptions |
+| `docs/revision_record.md` | Changes to the implementation and interpretation |
+| `legacy/v2/` | The supplied earlier source and saved outputs, retained for provenance |
 
-## Reproducibility notes
+## Sampling and interpretation
 
-- Scripts use fixed NumPy seeds for deterministic reruns.
-- Results are written to `results/`.
-- Figures are written to `figures/`.
-- The numbered scripts are intended to be run in order.
-- The main numerical scripts save canonical JSON outputs that the plotting scripts consume.
+Each revised condition starts `numpy.random.default_rng(42)` and consumes six uniform arrays per round in a fixed order. Repeated specifications therefore give the same result, and comparisons pair simulated conversations through common random inputs. The tests use discordant outcomes, rather than treating paired conditions as independent binomial samples. Donor controls use an independent seed, 4242; signal permutations and fair signals use seed 987.
 
-## Run order
+`results/manifest.json` records settings, dependency versions, and source hashes. `results/events.npz` retains the Boolean event arrays for the principal comparisons. Saved rate summaries include integer counts and denominators; zero observed crossings are not represented as proof of zero underlying probability.
 
-```bash
-python scripts/01_baseline_replication.py
-python scripts/02_coupled_model.py
-python scripts/03_informed_user.py
-python scripts/04_sensitivity_analysis.py
-python scripts/05_adaptive_informed_user.py
-python scripts/06_confidence_intervals.py
-python scripts/07_generate_figures.py
-python scripts/08_generate_revision_figures.py
-python scripts/09_mitigations.py
-python scripts/10_graded_signal.py
-```
+The reported rates quantify the specified simulation. They do not estimate clinical incidence or the frequency of harm among deployed-chatbot users. A catastrophic spiral is an operational threshold crossing, `P(H=0) >= 0.99` at any round, while the actual world is `H=1`.
 
-## Expected outputs
+## Changes from the supplied v2 archive
 
-- `01_baseline_replication.py` -> `results/baseline_results.json`
-- `02_coupled_model.py` -> `results/coupled_results.json`
-- `03_informed_user.py` -> `results/informed_results.json`
-- `04_sensitivity_analysis.py` -> `results/sensitivity_results.json`
-- `05_adaptive_informed_user.py` -> `results/adaptive_results.json`
-- `06_confidence_intervals.py` -> `results/confidence_intervals.json`
-- `07_generate_figures.py` -> main manuscript figures in `figures/`
-- `08_generate_revision_figures.py` -> revision figures in `figures/`
-- `09_mitigations.py` -> `results/mitigation_results.json` and `figures/figure9_mitigations.png`
-- `10_graded_signal.py` -> `results/graded_signal_results.json`
+The active analyses replace truncated Gaussian diffusion with reflection that preserves each world-state marginal. They add exact-rule and oracle learners, matched mitigation controls, component comparisons, donor schedule replay, shuffled signals, and fair feedback. The logistic endpoints are explicitly absorbing. All active numerical claims and figures use one common implementation.
 
-Scripts 09 and 10 are documented RECONSTRUCTIONS of scripts lost between revision rounds, calibrated against the archived result set; see their headers for the verification record.
+The earlier scripts are under `legacy/v2`; they are not inputs to the revised pipeline. Their original notes disclose that the mitigation and graded-signal scripts reconstructed code lost between revision rounds. Those notes are preserved. The revised estimates are new paired reruns, not numerical targets fitted to the earlier output.
 
-## Smoke test
+The manuscript's anonymised review copy can be submitted with a supplementary archive containing the active source and results. Public repository metadata identifies the author and should be handled according to the journal's submission requirements.
 
-```bash
-pytest -q
-```
+## Version and citation
 
-## Public release notes
-
-This repository is organized for portability:
-
-- no hardcoded local absolute paths
-- relative `results/` and `figures/` directories
-- simple smoke tests
-- metadata files for licensing and citation
-
-## Citation
-
-Please cite the companion paper and, if relevant, this code repository.
+This is a review version. The pull request records the exact source proposed for the manuscript revision; a final release should identify the accepted manuscript version and its corresponding commit. Citation metadata is supplied in `CITATION.cff`.

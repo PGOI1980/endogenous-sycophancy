@@ -1,0 +1,332 @@
+{
+  "0.0": {
+    "coupled": {
+      "n": 10000,
+      "count": 353,
+      "rate": 0.0353,
+      "wilson": [
+        0.03185787941401479,
+        0.03909900867169202
+      ],
+      "mean_final_pi": 0.7569040000000001,
+      "median_final_pi": 0.8800000000000004,
+      "n_at_one": 4138
+    },
+    "donor": {
+      "n": 10000,
+      "count": 367,
+      "rate": 0.0367,
+      "wilson": [
+        0.033189114320119714,
+        0.04056669857014922
+      ],
+      "mean_final_pi": 0.7576080000000002,
+      "median_final_pi": 0.8800000000000004,
+      "n_at_one": 4230
+    },
+    "donor_replay": {
+      "summary": {
+        "n": 10000,
+        "count": 751,
+        "rate": 0.0751,
+        "wilson": [
+          0.07009603941996534,
+          0.08043028239543562
+        ],
+        "mean_final_pi": 0.7497640000000001,
+        "median_final_pi": 0.8800000000000004,
+        "n_at_one": 4048
+      },
+      "vs_coupled": {
+        "lost": 94,
+        "gained": 492,
+        "difference": 0.0398,
+        "p": 5.106157717741599e-66,
+        "p_holm": 4.084926174193279e-65
+      }
+    },
+    "donor_mean": {
+      "summary": {
+        "n": 10000,
+        "count": 823,
+        "rate": 0.0823,
+        "wilson": [
+          0.0770726451510133,
+          0.08784814708784992
+        ],
+        "mean_final_pi": 0.749764,
+        "median_final_pi": 0.7497640000000001,
+        "n_at_one": 0
+      },
+      "vs_coupled": {
+        "lost": 46,
+        "gained": 516,
+        "difference": 0.047,
+        "p": 1.2232909020145366e-101,
+        "p_holm": 1.3456199922159903e-100
+      }
+    },
+    "shuffled_signals": {
+      "summary": {
+        "n": 10000,
+        "count": 773,
+        "rate": 0.0773,
+        "wilson": [
+          0.07222639031454536,
+          0.0826982419080246
+        ],
+        "mean_final_pi": 0.8349420000000004,
+        "median_final_pi": 0.8500000000000004,
+        "n_at_one": 1800
+      },
+      "vs_coupled": {
+        "lost": 74,
+        "gained": 494,
+        "difference": 0.042,
+        "p": 3.371397838820943e-77,
+        "p_holm": 3.0342580549388486e-76
+      }
+    },
+    "fair_signals": {
+      "summary": {
+        "n": 10000,
+        "count": 245,
+        "rate": 0.0245,
+        "wilson": [
+          0.02164766048220529,
+          0.02771752196830815
+        ],
+        "mean_final_pi": 0.150074,
+        "median_final_pi": 0.12000000000000001,
+        "n_at_one": 0
+      },
+      "vs_coupled": {
+        "lost": 197,
+        "gained": 89,
+        "difference": -0.0108,
+        "p": 1.524361878797645e-10,
+        "p_holm": 7.621809393988225e-10
+      }
+    }
+  },
+  "0.3": {
+    "coupled": {
+      "n": 10000,
+      "count": 2339,
+      "rate": 0.2339,
+      "wilson": [
+        0.22570643531200518,
+        0.24229792862086885
+      ],
+      "mean_final_pi": 0.9940319999999999,
+      "median_final_pi": 1.0,
+      "n_at_one": 9786
+    },
+    "donor": {
+      "n": 10000,
+      "count": 2338,
+      "rate": 0.2338,
+      "wilson": [
+        0.2256077053008672,
+        0.24219673543168102
+      ],
+      "mean_final_pi": 0.9934139999999999,
+      "median_final_pi": 1.0,
+      "n_at_one": 9754
+    },
+    "donor_replay": {
+      "summary": {
+        "n": 10000,
+        "count": 2533,
+        "rate": 0.2533,
+        "wilson": [
+          0.24487193448313196,
+          0.2619175303129598
+        ],
+        "mean_final_pi": 0.993044,
+        "median_final_pi": 1.0,
+        "n_at_one": 9754
+      },
+      "vs_coupled": {
+        "lost": 351,
+        "gained": 545,
+        "difference": 0.0194,
+        "p": 9.644257101716087e-11,
+        "p_holm": 5.786554261029652e-10
+      }
+    },
+    "donor_mean": {
+      "summary": {
+        "n": 10000,
+        "count": 2553,
+        "rate": 0.2553,
+        "wilson": [
+          0.24684906340839455,
+          0.26393886539421463
+        ],
+        "mean_final_pi": 0.9930440000000003,
+        "median_final_pi": 0.993044,
+        "n_at_one": 0
+      },
+      "vs_coupled": {
+        "lost": 239,
+        "gained": 453,
+        "difference": 0.0214,
+        "p": 3.288241683434142e-16,
+        "p_holm": 2.3017691784038994e-15
+      }
+    },
+    "shuffled_signals": {
+      "summary": {
+        "n": 10000,
+        "count": 2510,
+        "rate": 0.251,
+        "wilson": [
+          0.24259853068059406,
+          0.2595927005080028
+        ],
+        "mean_final_pi": 0.999936,
+        "median_final_pi": 1.0,
+        "n_at_one": 9968
+      },
+      "vs_coupled": {
+        "lost": 326,
+        "gained": 497,
+        "difference": 0.0171,
+        "p": 2.7373629557170256e-09,
+        "p_holm": 1.0949451822868102e-08
+      }
+    },
+    "fair_signals": {
+      "summary": {
+        "n": 10000,
+        "count": 1569,
+        "rate": 0.1569,
+        "wilson": [
+          0.14990338535466083,
+          0.16416011432729746
+        ],
+        "mean_final_pi": 0.31000400000000006,
+        "median_final_pi": 0.3,
+        "n_at_one": 1
+      },
+      "vs_coupled": {
+        "lost": 969,
+        "gained": 199,
+        "difference": -0.077,
+        "p": 6.968370243784608e-122,
+        "p_holm": 8.36204429254153e-121
+      }
+    }
+  },
+  "0.5": {
+    "coupled": {
+      "n": 10000,
+      "count": 3628,
+      "rate": 0.3628,
+      "wilson": [
+        0.35343068667559374,
+        0.3722746824773199
+      ],
+      "mean_final_pi": 1.0,
+      "median_final_pi": 1.0,
+      "n_at_one": 10000
+    },
+    "donor": {
+      "n": 10000,
+      "count": 3529,
+      "rate": 0.3529,
+      "wilson": [
+        0.34359199636261595,
+        0.36232097595803703
+      ],
+      "mean_final_pi": 1.0,
+      "median_final_pi": 1.0,
+      "n_at_one": 10000
+    },
+    "donor_replay": {
+      "summary": {
+        "n": 10000,
+        "count": 3701,
+        "rate": 0.3701,
+        "wilson": [
+          0.3606882489459404,
+          0.3796115138307612
+        ],
+        "mean_final_pi": 1.0,
+        "median_final_pi": 1.0,
+        "n_at_one": 10000
+      },
+      "vs_coupled": {
+        "lost": 241,
+        "gained": 314,
+        "difference": 0.0073,
+        "p": 0.002212776771884555,
+        "p_holm": 0.00442555354376911
+      }
+    },
+    "donor_mean": {
+      "summary": {
+        "n": 10000,
+        "count": 3678,
+        "rate": 0.3678,
+        "wilson": [
+          0.35840136822146873,
+          0.3773001609477381
+        ],
+        "mean_final_pi": 1.0,
+        "median_final_pi": 1.0,
+        "n_at_one": 10000
+      },
+      "vs_coupled": {
+        "lost": 211,
+        "gained": 261,
+        "difference": 0.005,
+        "p": 0.024005522373606078,
+        "p_holm": 0.024005522373606078
+      }
+    },
+    "shuffled_signals": {
+      "summary": {
+        "n": 10000,
+        "count": 3706,
+        "rate": 0.3706,
+        "wilson": [
+          0.3611854274133682,
+          0.3801139513649628
+        ],
+        "mean_final_pi": 1.0,
+        "median_final_pi": 1.0,
+        "n_at_one": 10000
+      },
+      "vs_coupled": {
+        "lost": 236,
+        "gained": 314,
+        "difference": 0.0078,
+        "p": 0.0010083351031910492,
+        "p_holm": 0.0030250053095731474
+      }
+    },
+    "fair_signals": {
+      "summary": {
+        "n": 10000,
+        "count": 3011,
+        "rate": 0.3011,
+        "wilson": [
+          0.2921867173282191,
+          0.3101660372236359
+        ],
+        "mean_final_pi": 0.49946599999999997,
+        "median_final_pi": 0.5,
+        "n_at_one": 26
+      },
+      "vs_coupled": {
+        "lost": 867,
+        "gained": 250,
+        "difference": -0.0617,
+        "p": 3.8223515884577775e-80,
+        "p_holm": 3.8223515884577775e-79
+      }
+    }
+  }
+}
