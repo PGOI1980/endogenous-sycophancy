@@ -1,0 +1,84 @@
+{
+  "seed": 42,
+  "alpha": 0.02,
+  "n_sims": 10000,
+  "rows": {
+    "pi0_0.0": {
+      "fixed": 0.0059,
+      "graded_coupled": 0.0064,
+      "binary_coupled": 0.0366,
+      "graded_final_pi": 0.007806037303585767,
+      "binary_final_pi": 0.7536820000000002
+    },
+    "pi0_0.1": {
+      "fixed": 0.0269,
+      "graded_coupled": 0.0278,
+      "binary_coupled": 0.0709,
+      "graded_final_pi": 0.10485141631290512,
+      "binary_final_pi": 0.8414020000000001
+    },
+    "pi0_0.2": {
+      "fixed": 0.0793,
+      "graded_coupled": 0.083,
+      "binary_coupled": 0.1608,
+      "graded_final_pi": 0.2088438224018043,
+      "binary_final_pi": 0.9510720000000001
+    },
+    "pi0_0.3": {
+      "fixed": 0.1658,
+      "graded_coupled": 0.174,
+      "binary_coupled": 0.2437,
+      "graded_final_pi": 0.3115973457785906,
+      "binary_final_pi": 0.993166
+    },
+    "pi0_0.4": {
+      "fixed": 0.2489,
+      "graded_coupled": 0.2567,
+      "binary_coupled": 0.3152,
+      "graded_final_pi": 0.41358356112917843,
+      "binary_final_pi": 0.999596
+    },
+    "pi0_0.5": {
+      "fixed": 0.3197,
+      "graded_coupled": 0.3242,
+      "binary_coupled": 0.3669,
+      "graded_final_pi": 0.515125495497007,
+      "binary_final_pi": 1.0
+    },
+    "pi0_0.6": {
+      "fixed": 0.3655,
+      "graded_coupled": 0.3705,
+      "binary_coupled": 0.4054,
+      "graded_final_pi": 0.6161540377909053,
+      "binary_final_pi": 1.0
+    },
+    "pi0_0.7": {
+      "fixed": 0.4088,
+      "graded_coupled": 0.413,
+      "binary_coupled": 0.4396,
+      "graded_final_pi": 0.7169211578861854,
+      "binary_final_pi": 1.0
+    },
+    "pi0_0.8": {
+      "fixed": 0.4419,
+      "graded_coupled": 0.4459,
+      "binary_coupled": 0.4641,
+      "graded_final_pi": 0.8176391410118731,
+      "binary_final_pi": 1.0
+    },
+    "pi0_0.9": {
+      "fixed": 0.4711,
+      "graded_coupled": 0.4747,
+      "binary_coupled": 0.4878,
+      "graded_final_pi": 0.9183668933924524,
+      "binary_final_pi": 1.0
+    },
+    "pi0_1.0": {
+      "fixed": 0.5031,
+      "graded_coupled": 0.5031,
+      "binary_coupled": 0.5031,
+      "graded_final_pi": 1.0,
+      "binary_final_pi": 1.0
+    }
+  }
+}

@@ -6,7 +6,6 @@ authors:
   - family-names: Gallacher
     given-names: Paul
     orcid: "https://orcid.org/0009-0008-0313-9338"
-version: "1.0.0"
-date-released: 2026-04-07
+version: "3.0.0-review"
 license: MIT
-repository-code: "https://github.com/your-user-name/endogenous-sycophancy"
+repository-code: "https://github.com/PGOI1980/endogenous-sycophancy"
